@@ -190,3 +190,23 @@ To find out if the host is running on a virtualized platform or in a container u
 ```ruby
 host_inventory['virtualization'][:system] # => "docker" 
 ```
+
+----
+
+### kernel
+
+You can get architecture of the host.
+
+```ruby
+host_inventory['kernel']['machine'] # => "x86_64"
+```
+
+On Linux systems also several informations about kernel are available.
+
+```ruby
+# Example of CentOS 6.6 Kernel version 2.6.32-504.30.3.el6.x86_64
+host_inventory['kernel']['name']          # => "Linux"
+host_inventory['kernel']['release']       # => "2.6.32-504.30.3.el6.x86_64"
+host_inventory['kernel']['version']       # => "2.6.32"
+host_inventory['kernel']['version_major'] # => "2.6"
+```
